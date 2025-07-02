@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
 import Image from 'next/image';
 import { useMotionTracking } from '../hooks/useMotionTracking';
 
@@ -36,6 +36,21 @@ export default function Keyboard() {
   const spaceKeyPos = useRef<KeyPosition>({ x: 0, y: 0, width: 120, height: 30 });
 
   useMotionTracking(containerRef);
+
+  const createRipple = useCallback((position: KeyPosition) => {
+    const newRipple = {
+      id: nextRippleId,
+      x: position.x + position.width / 2,
+      y: position.y + position.height / 2
+    };
+
+    setRipples(prev => [...prev, newRipple]);
+    setNextRippleId(prev => prev + 1);
+
+    setTimeout(() => {
+      setRipples(prev => prev.filter(r => r.id !== newRipple.id));
+    }, 1000);
+  }, [nextRippleId]);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -80,22 +95,7 @@ export default function Keyboard() {
       window.removeEventListener('keydown', handleKeyDown);
       window.removeEventListener('keyup', handleKeyUp);
     };
-  }, []);
-
-  const createRipple = (position: KeyPosition) => {
-    const newRipple = {
-      id: nextRippleId,
-      x: position.x + position.width / 2,
-      y: position.y + position.height / 2
-    };
-
-    setRipples(prev => [...prev, newRipple]);
-    setNextRippleId(prev => prev + 1);
-
-    setTimeout(() => {
-      setRipples(prev => prev.filter(r => r.id !== newRipple.id));
-    }, 1000);
-  };
+  }, [createRipple]);
 
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!containerRef.current) return;

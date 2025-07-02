@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 
 export const useMotionTracking = (ref: React.RefObject<HTMLElement | null>) => {
   const lastMotion = useRef({ x: 0, y: 0, timestamp: 0 });
-  const animationFrame = useRef<number>();
+  const animationFrame = useRef<number | undefined>(undefined);
 
   useEffect(() => {
     const element = ref.current;
@@ -98,9 +98,17 @@ export const useMotionTracking = (ref: React.RefObject<HTMLElement | null>) => {
     element.addEventListener('mousemove', handleMouseMove);
     
     // Request device orientation permission and add listener
-    if (typeof DeviceOrientationEvent !== 'undefined' && typeof (DeviceOrientationEvent as any).requestPermission === 'function') {
-      (DeviceOrientationEvent as any).requestPermission()
-        .then((permissionState: string) => {
+    interface DeviceOrientationEventiOS extends DeviceOrientationEvent {
+      requestPermission?: () => Promise<'granted' | 'denied' | 'default'>;
+    }
+    
+    const DeviceOrientationEventiOS = DeviceOrientationEvent as unknown as {
+      requestPermission?: () => Promise<'granted' | 'denied' | 'default'>;
+    };
+    
+    if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEventiOS.requestPermission === 'function') {
+      DeviceOrientationEventiOS.requestPermission?.()
+        .then((permissionState) => {
           if (permissionState === 'granted') {
             window.addEventListener('deviceorientation', handleDeviceOrientation);
             window.addEventListener('devicemotion', handleDeviceMotion);
