@@ -38,20 +38,33 @@ const Navbar = () => {
             />
           </motion.div>
 
-          {/* Install Button */}
-          <button
-            ref={buttonRef}
-            className="glass-button flex items-center gap-2 px-6 py-2.5 rounded-full"
-          >
-            <Image
-              src="/raycastLogo.svg"
-              alt="Raycast Logo"
-              width={24}
-              height={24}
-              className="h-5 w-5"
-            />
-            <span className="text-white font-medium">Install Extension</span>
-          </button>
+          {/* Buttons */}
+          <div className="flex items-center gap-3">
+            {/* Download Raycast */}
+            <a
+              href="https://www.raycast.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="glass-button px-4 py-2 rounded-full text-sm text-white/90 hover:text-white transition-colors"
+            >
+              Download Raycast
+            </a>
+
+            {/* Install Button */}
+            <button
+              ref={buttonRef}
+              className="glass-button flex items-center gap-2 px-4 py-2 rounded-full"
+            >
+              <Image
+                src="/raycastLogo.svg"
+                alt="Raycast Logo"
+                width={24}
+                height={24}
+                className="h-5 w-5"
+              />
+              <span className="text-white font-medium text-sm">Install Extension</span>
+            </button>
+          </div>
         </div>
       </div>
     </motion.nav>
