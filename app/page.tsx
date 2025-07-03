@@ -72,7 +72,7 @@ export default function Home() {
               </div>
 
               {/* Large heading */}
-              <h1 className="mt-6 text-4xl lg:text-5xl font-bold leading-tight md:text-6xl max-w-3xl text-white reveal-animation reveal-delay-2">
+              <h1 className="mt-6 text-4xl lg:text-6xl font-bold leading-tight md:text-6xl max-w-3xl text-white reveal-animation reveal-delay-2">
                 Solana shortcuts, right in your command bar.
               </h1>
 
