@@ -57,7 +57,7 @@ export default function Home() {
         {/* Hero Content */}
         <div className="relative z-10">
           <Navbar />
-          <div className="pt-24 px-6 max-w-7xl mx-auto pb-32">
+          <div className="pt-24 px-6 max-w-7xl mx-auto">
             <div className="flex flex-col items-center text-center mt-16">
               {/* Small rounded pill with gradient */}
               <div className="flex items-center gap-4 reveal-animation reveal-delay-1">
@@ -72,7 +72,7 @@ export default function Home() {
               </div>
 
               {/* Large heading */}
-              <h1 className="mt-6 text-5xl font-bold leading-tight md:text-6xl max-w-3xl text-white reveal-animation reveal-delay-2">
+              <h1 className="mt-6 text-4xl lg:text-5xl font-bold leading-tight md:text-6xl max-w-3xl text-white reveal-animation reveal-delay-2">
                 Solana shortcuts, right in your command bar.
               </h1>
 
@@ -204,7 +204,7 @@ export default function Home() {
         {/* Command Bar Section */}
         <div className="mt-32 flex flex-col items-center text-center">
           <ScrollReveal>
-            <h2 className="text-6xl font-bold mb-12">
+            <h2 className="text-5xl lg:text-6xl font-bold mb-12">
               Solana at your Command Bar
             </h2>
           </ScrollReveal>
@@ -327,9 +327,9 @@ export default function Home() {
 
         {/* Never Miss an Alpha Section */}
         <ScrollReveal>
-          <div className="mt-32 flex items-center justify-between max-w-7xl mx-auto px-6">
+          <div className="mt-32 flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto px-6 gap-8">
             {/* Text Content */}
-            <div className="flex-1">
+            <div className="flex-1 text-center md:text-left order-2 md:order-1">
               <h2 className="text-4xl font-bold mb-4">Never miss an alpha.</h2>
               <p className="text-xl text-white/70">
                 Trade like a pro in seconds on your desktop.
@@ -337,7 +337,7 @@ export default function Home() {
               {/* Download Button */}
               <button
                 ref={downloadButtonRef}
-                className="mt-8 glass-button rounded-full px-6 py-3 flex items-center gap-3 text-white hover:scale-105 transition-transform"
+                className="mt-8 w-full md:w-auto glass-button rounded-full px-6 py-3 flex items-center justify-center md:justify-start gap-3 text-white hover:scale-105 transition-transform"
               >
                 <Image
                   src="/assets/icons/mac.svg"
@@ -351,7 +351,7 @@ export default function Home() {
             </div>
 
             {/* Image */}
-            <div className="flex-1 relative h-[400px]">
+            <div className="flex-1 relative h-[300px] md:h-[400px] w-full order-1 md:order-2">
               <Image
                 src="/assets/abstracts/keyboard2.svg"
                 alt="Trading Interface"
@@ -384,7 +384,7 @@ export default function Home() {
                 {/* Social Icons */}
                 <div className="flex gap-4 mb-6">
                   <a
-                    href="https://twitter.com/sendai_ai"
+                    href="https://x.com/sendaifun"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="opacity-50 hover:opacity-100 transition-opacity"
@@ -397,7 +397,7 @@ export default function Home() {
                     />
                   </a>
                   <a
-                    href="https://github.com/sendai-ai"
+                    href="https://github.com/sendaifun/raycast"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="opacity-50 hover:opacity-100 transition-opacity"
@@ -412,9 +412,11 @@ export default function Home() {
                 </div>
 
                 {/* Text content in single line */}
-                <div className="flex justify-between items-center text-sm text-white/50">
-                  <p>Twenty&apos;25 SendAI © All Rights Reserved</p>
-                  <div>
+                <div className="flex flex-col md:flex-row justify-between items-center text-sm text-white/50 gap-4 md:gap-0">
+                  <p className="text-center md:text-left">
+                    Twenty&apos;25 SendAI © All Rights Reserved
+                  </p>
+                  <div className="flex items-center">
                     <a
                       href="/terms"
                       className="hover:text-white transition-colors"
