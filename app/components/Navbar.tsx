@@ -118,7 +118,7 @@ const Navbar = () => {
                   rel="noopener noreferrer"
                   className="glass-button px-4 py-2 rounded-full text-sm text-white/90 hover:text-white transition-colors text-center"
                 >
-                  Download
+                  Download Raycast
                 </a>
                 <button className="glass-button flex items-center justify-center gap-2 px-4 py-2 rounded-full">
                   <Image
@@ -128,7 +128,7 @@ const Navbar = () => {
                     height={24}
                     className="h-5 w-5"
                   />
-                  <span className="text-white font-medium text-sm">Install</span>
+                  <span className="text-white font-medium text-sm">Install Extension</span>
                 </button>
               </div>
             </motion.div>

@@ -9,7 +9,7 @@ import ScrollReveal from "./components/ScrollReveal";
 
 export default function Home() {
   const pillRef = useRef<HTMLDivElement>(null);
-  const downloadButtonRef = useRef<HTMLButtonElement>(null);
+  const downloadButtonRef = useRef<HTMLAnchorElement>(null);
   const card1Ref = useRef<HTMLDivElement>(null);
   const card2Ref = useRef<HTMLDivElement>(null);
   const card3Ref = useRef<HTMLDivElement>(null);
@@ -221,34 +221,37 @@ export default function Home() {
             <div className="w-full mb-6">
               <div
                 ref={card3Ref}
-                className="glass p-12 rounded-xl border-1 border-white/2 relative group card-border min-h-[240px]"
+                className="glass p-8 md:p-12 rounded-xl border-1 border-white/2 relative group card-border min-h-[240px] overflow-hidden"
               >
                 <div className="absolute inset-[6px] rounded-lg border border-white/10 pointer-events-none card-border-glow"></div>
                 <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-transparent via-white/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                {/* Video Background */}
-                <div className="absolute top-4 right-4 bottom-4 w-1/2 overflow-hidden">
-                  <video
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="w-full h-full object-cover object-top"
-                  >
-                    <source src="https://ik.imagekit.io/scriptscrypt/SendAI/Raycast/raycast-asksendai-wobg.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                  {/* Overlay gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-transparent"></div>
-                </div>
-                {/* Content */}
-                <div className="relative z-10 flex items-start justify-between">
-                  <div className="max-w-xl">
-                    <h3 className="text-2xl font-bold mb-4">
-                      Just type @sendai
-                    </h3>
-                    <p className="text-white/70 leading-relaxed">
-                      And ask AI to perform 15+ Solana Actions
-                    </p>
+                <div className="flex flex-col md:block">
+                  {/* Video Background */}
+                  <div className="relative h-48 rounded-lg overflow-hidden mb-6 md:absolute md:top-4 md:right-4 md:bottom-4 md:w-1/2 md:h-auto md:mb-0">
+                    <video
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full h-full object-cover object-top"
+                    >
+                      <source src="https://ik.imagekit.io/scriptscrypt/SendAI/Raycast/raycast-asksendai-wobg.mp4" type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                    {/* Overlay gradient for desktop */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-transparent hidden md:block"></div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="relative z-10">
+                    <div className="md:max-w-xl">
+                      <h3 className="text-2xl font-bold mb-4">
+                        Just type @sendai
+                      </h3>
+                      <p className="text-white/70 leading-relaxed">
+                        And ask AI to perform 15+ Solana Actions
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -291,33 +294,42 @@ export default function Home() {
             <ScrollReveal width="auto">
               <div
                 ref={card2Ref}
-                className="glass p-12 rounded-xl border-1 border-white/2 relative group card-border h-full flex flex-col"
+                className="glass p-8 md:p-12 rounded-xl border-1 border-white/2 relative group card-border h-full flex flex-col"
               >
                 <div className="absolute inset-[6px] rounded-lg border border-white/10 pointer-events-none card-border-glow"></div>
                 <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-transparent via-white/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <div className="flex flex-col text-left flex-1">
-                  <div className="relative w-full h-full">
-                    <div className="absolute right-0 top-0 bottom-0 w-2/3 flex items-center justify-end">
-                      <Image
-                        src="/assets/bento/sendai.png"
-                        alt="SendAI Icon"
-                        width={400}
-                        height={400}
-                        className="w-full h-auto max-h-full object-contain opacity-90"
-                      />
-                    </div>
-                    <div className="relative z-10 h-full flex flex-col justify-end">
-                      <p className="text-white/70 text-lg font-bold mb-2">
-                        Powered by{" "}
-                      </p>
-                      <h3 className="text-2xl font-bold mb-4">
-                        SendAI Tooling Stack
-                      </h3>
-                      <p className="text-white/70 leading-relaxed max-w-[80%]">
-                        Proprietary composable tooling stack with remote MCP
-                        servers context-engineered for superior tool calling.
-                      </p>
-                    </div>
+                <div className="flex flex-col md:block text-left flex-1 relative">
+                  {/* Image for Desktop */}
+                  <div className="hidden md:flex absolute right-0 top-0 bottom-0 w-2/3 items-center justify-end">
+                    <Image
+                      src="/assets/bento/sendai.png"
+                      alt="SendAI Icon"
+                      width={400}
+                      height={400}
+                      className="w-full h-auto max-h-full object-contain opacity-90"
+                    />
+                  </div>
+                  {/* Image for Mobile */}
+                  <div className="md:hidden mb-6">
+                    <Image
+                      src="/assets/bento/sendai.png"
+                      alt="SendAI Icon"
+                      width={400}
+                      height={400}
+                      className="w-full h-auto max-h-full object-contain opacity-90"
+                    />
+                  </div>
+                  <div className="relative z-10 h-full flex flex-col justify-end">
+                    <p className="text-white/70 text-lg font-bold mb-2">
+                      Powered by{" "}
+                    </p>
+                    <h3 className="text-2xl font-bold mb-4">
+                      SendAI Tooling Stack
+                    </h3>
+                    <p className="text-white/70 leading-relaxed md:max-w-[55%]">
+                      Proprietary composable tooling stack with remote MCP
+                      servers context-engineered for superior tool calling.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -335,7 +347,10 @@ export default function Home() {
                 Trade like a pro in seconds on your desktop.
               </p>
               {/* Download Button */}
-              <button
+              <a
+                href="https://www.raycast.com/go"
+                target="_blank"
+                rel="noopener noreferrer"
                 ref={downloadButtonRef}
                 className="mt-8 w-full md:w-auto glass-button rounded-full px-6 py-3 flex items-center justify-center md:justify-start gap-3 text-white hover:scale-105 transition-transform"
               >
@@ -347,7 +362,7 @@ export default function Home() {
                   className="text-white"
                 />
                 <span>Download for Mac</span>
-              </button>
+              </a>
             </div>
 
             {/* Image */}
