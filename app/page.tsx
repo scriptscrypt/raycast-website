@@ -158,13 +158,13 @@ export default function Home() {
               <div className="mt-8 w-full max-w-5xl mx-auto reveal-animation reveal-delay-2">
                 <div className="glass rounded-2xl p-4 aspect-video relative overflow-hidden">
                   {/* Background Image */}
-                  <Image
+                  {/* <Image
                     src="/assets/bgs/laptopbg.png"
                     alt="Laptop Background"
                     fill
                     className="object-cover"
                     priority
-                  />
+                  /> */}
 
                   {/* Laptop Top Bar */}
                   <div className="absolute top-0 left-0 right-0 h-8 bg-black/20 rounded-t-2xl flex items-center px-4"></div>
@@ -180,7 +180,7 @@ export default function Home() {
                           playsInline
                           className="w-full h-full object-contain"
                         >
-                          <source src="https://ik.imagekit.io/scriptscrypt/SendAI/Raycast/raycast-asksendai.mp4" type="video/mp4" />
+                          <source src="https://bucket.sendai.fun/commandmode28mb.mp4" type="video/mp4" />
                           Your browser does not support the video tag.
                         </video>
                       ) : null}
@@ -195,7 +195,7 @@ export default function Home() {
                           className="w-full h-full object-contain"
                         >
                           <source
-                            src="https://ik.imagekit.io/scriptscrypt/SendAI/Raycast/raycast-asksendai.mp4"
+                            src="https://bucket.sendai.fun/agenticmode45mb.mp4"
                             type="video/mp4"
                           />
                           Your browser does not support the video tag.
@@ -221,7 +221,7 @@ export default function Home() {
         {/* Command Bar Section */}
         <div className="mt-32 flex flex-col items-center text-center">
           <ScrollReveal>
-            <h2 className="text-5xl lg:text-6xl font-bold mb-12">
+            <h2 className="text-5xl lg:text-6xl font-bold">
               Solana at your Command Bar
             </h2>
           </ScrollReveal>
@@ -234,6 +234,73 @@ export default function Home() {
 
         {/* Bento Grid Section */}
         <div className="mt-32 max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 auto-rows-fr">
+            {/* First new card */}
+            <ScrollReveal width="auto">
+              <div
+                className="glass p-4 md:p-12 rounded-lg border-1 border-white/2 relative group card-border h-full flex flex-col overflow-hidden"
+              >
+                <div className="absolute inset-[6px] rounded-lg border border-white/10 pointer-events-none card-border-glow"></div>
+                <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-transparent via-white/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div className="relative flex-grow rounded-lg overflow-hidden mb-6">
+                    <video
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full h-full object-cover"
+                    >
+                      <source
+                        src="https://bucket.sendai.fun/jup.mp4"
+                        type="video/mp4"
+                      />
+                      Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div className="relative z-10 text-left">
+                  <h3 className="text-2xl font-bold mb-2">
+                    Buy in less than 4 seconds
+                  </h3>
+                  <p className="text-white/70 leading-relaxed">
+                    Powered by Jupiter Ultra&apos;s fastest execution.
+                  </p>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* Second new card */}
+            <ScrollReveal width="auto">
+              <div
+                className="glass p-4 md:p-12 rounded-md border-1 border-white/2 relative group card-border h-full flex flex-col overflow-hidden"
+              >
+                <div className="absolute inset-[6px] rounded-md border border-white/10 pointer-events-none card-border-glow"></div>
+                <div className="absolute inset-0 rounded-md bg-gradient-to-br from-transparent via-white/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div className="relative flex-grow rounded-lg overflow-hidden mb-6">
+                    <video
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full h-full object-cover"
+                    >
+                      <source
+                        src="https://bucket.sendai.fun/dcalo.mp4"
+                        type="video/mp4"
+                      />
+                      Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div className="relative z-10 text-left">
+                  <h3 className="text-2xl font-bold mb-2">
+                    Advanced Trading
+                  </h3>
+                  <p className="text-white/70 leading-relaxed">
+                    via DCA and Limit Orders.
+                  </p>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
           <ScrollReveal>
             <div className="w-full mb-6">
               <div
