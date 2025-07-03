@@ -299,7 +299,7 @@ export default function Home() {
                   <div className="relative w-full h-full">
                     <div className="absolute right-0 top-0 bottom-0 w-2/3 flex items-center justify-end">
                       <Image
-                        src="/assets/bento/sendai.svg"
+                        src="/assets/bento/sendai.png"
                         alt="SendAI Icon"
                         width={400}
                         height={400}
