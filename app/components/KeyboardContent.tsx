@@ -30,7 +30,6 @@ const Key: React.FC<{
       x={x + (label_x_offset || width / 2)}
       y={y + (label_y_offset || height / 2) + 5} 
       textAnchor="middle"
-      fontFamily="Inter"
       fontSize="16"
       letterSpacing="0em"
     >
@@ -42,8 +41,8 @@ const Key: React.FC<{
 const KeyboardContent: React.FC<KeyboardContentProps> = ({
   pressedKeys
 }) => {
-  const keyWidth = 58;
-  const keyHeight = 57;
+  const keyWidth = 64;
+  const keyHeight = 64;
   const xGap = 5;
   const yGap = 5;
   const startX = 5;
@@ -62,11 +61,7 @@ const KeyboardContent: React.FC<KeyboardContentProps> = ({
     { code: 'F7', x: startX + 7.5*keyWidth + 6.5*xGap, y: startY, width: keyWidth, height: keyHeight, label: 'F7' },
     { code: 'F8', x: startX + 8.5*keyWidth + 7.5*xGap, y: startY, width: keyWidth, height: keyHeight, label: 'F8' },
     { code: 'F9', x: startX + 9.5*keyWidth + 8.5*xGap, y: startY, width: keyWidth, height: keyHeight, label: 'F9' },
-    { code: 'F10', x: startX + 10.5*keyWidth + 9.5*xGap, y: startY, width: keyWidth, height: keyHeight, label: 'F10' },
-    { code: 'F11', x: startX + 11.5*keyWidth + 10.5*xGap, y: startY, width: keyWidth, height: keyHeight, label: 'F11' },
-    { code: 'F12', x: startX + 12.5*keyWidth + 11.5*xGap, y: startY, width: keyWidth, height: keyHeight, label: 'F12' },
-    { code: 'Eject', x: startX + 13.5*keyWidth + 12.5*xGap, y: startY, width: keyWidth, height: keyHeight, label: '⏏' },
-
+    
     // Row 2 (Numbers)
     { code: 'Backquote', x: startX, y: startY + keyHeight + yGap, width: keyWidth, height: keyHeight, label: '`' },
     { code: 'Digit1', x: startX + keyWidth + xGap, y: startY + keyHeight + yGap, width: keyWidth, height: keyHeight, label: '1' },
@@ -79,10 +74,7 @@ const KeyboardContent: React.FC<KeyboardContentProps> = ({
     { code: 'Digit8', x: startX + 8*keyWidth + 8*xGap, y: startY + keyHeight + yGap, width: keyWidth, height: keyHeight, label: '8' },
     { code: 'Digit9', x: startX + 9*keyWidth + 9*xGap, y: startY + keyHeight + yGap, width: keyWidth, height: keyHeight, label: '9' },
     { code: 'Digit0', x: startX + 10*keyWidth + 10*xGap, y: startY + keyHeight + yGap, width: keyWidth, height: keyHeight, label: '0' },
-    { code: 'Minus', x: startX + 11*keyWidth + 11*xGap, y: startY + keyHeight + yGap, width: keyWidth, height: keyHeight, label: '-' },
-    { code: 'Equal', x: startX + 12*keyWidth + 12*xGap, y: startY + keyHeight + yGap, width: keyWidth, height: keyHeight, label: '=' },
-    { code: 'Backspace', x: startX + 13*keyWidth + 13*xGap, y: startY + keyHeight + yGap, width: keyWidth*1.5, height: keyHeight, label: 'Delete' },
-
+    
     // Row 3 (QWERTY)
     { code: 'Tab', x: startX, y: startY + 2*(keyHeight + yGap), width: keyWidth*1.5, height: keyHeight, label: 'Tab' },
     { code: 'KeyQ', x: startX + 1.5*keyWidth + xGap, y: startY + 2*(keyHeight + yGap), width: keyWidth, height: keyHeight, label: 'Q' },
@@ -95,10 +87,7 @@ const KeyboardContent: React.FC<KeyboardContentProps> = ({
     { code: 'KeyI', x: startX + 8.5*keyWidth + 8*xGap, y: startY + 2*(keyHeight + yGap), width: keyWidth, height: keyHeight, label: 'I' },
     { code: 'KeyO', x: startX + 9.5*keyWidth + 9*xGap, y: startY + 2*(keyHeight + yGap), width: keyWidth, height: keyHeight, label: 'O' },
     { code: 'KeyP', x: startX + 10.5*keyWidth + 10*xGap, y: startY + 2*(keyHeight + yGap), width: keyWidth, height: keyHeight, label: 'P' },
-    { code: 'BracketLeft', x: startX + 11.5*keyWidth + 11*xGap, y: startY + 2*(keyHeight + yGap), width: keyWidth, height: keyHeight, label: '[' },
-    { code: 'BracketRight', x: startX + 12.5*keyWidth + 12*xGap, y: startY + 2*(keyHeight + yGap), width: keyWidth, height: keyHeight, label: ']' },
-    { code: 'Backslash', x: startX + 13.5*keyWidth + 13*xGap, y: startY + 2*(keyHeight + yGap), width: keyWidth, height: keyHeight, label: '\\' },
-
+    
     // Row 4 (ASDF)
     { code: 'CapsLock', x: startX, y: startY + 3*(keyHeight + yGap), width: keyWidth*1.75, height: keyHeight, label: 'Caps Lock' },
     { code: 'KeyA', x: startX + 1.75*keyWidth + xGap, y: startY + 3*(keyHeight + yGap), width: keyWidth, height: keyHeight, label: 'A' },
@@ -110,10 +99,7 @@ const KeyboardContent: React.FC<KeyboardContentProps> = ({
     { code: 'KeyJ', x: startX + 7.75*keyWidth + 7*xGap, y: startY + 3*(keyHeight + yGap), width: keyWidth, height: keyHeight, label: 'J' },
     { code: 'KeyK', x: startX + 8.75*keyWidth + 8*xGap, y: startY + 3*(keyHeight + yGap), width: keyWidth, height: keyHeight, label: 'K' },
     { code: 'KeyL', x: startX + 9.75*keyWidth + 9*xGap, y: startY + 3*(keyHeight + yGap), width: keyWidth, height: keyHeight, label: 'L' },
-    { code: 'Semicolon', x: startX + 10.75*keyWidth + 10*xGap, y: startY + 3*(keyHeight + yGap), width: keyWidth, height: keyHeight, label: ';' },
-    { code: 'Quote', x: startX + 11.75*keyWidth + 11*xGap, y: startY + 3*(keyHeight + yGap), width: keyWidth, height: keyHeight, label: "'" },
-    { code: 'Enter', x: startX + 12.75*keyWidth + 12*xGap, y: startY + 3*(keyHeight + yGap), width: keyWidth*1.75, height: keyHeight, label: 'Return' },
-
+    
     // Row 5 (ZXCV)
     { code: 'ShiftLeft', x: startX, y: startY + 4*(keyHeight + yGap), width: keyWidth*2.25, height: keyHeight, label: 'Shift' },
     { code: 'KeyZ', x: startX + 2.25*keyWidth + xGap, y: startY + 4*(keyHeight + yGap), width: keyWidth, height: keyHeight, label: 'Z' },
@@ -124,27 +110,17 @@ const KeyboardContent: React.FC<KeyboardContentProps> = ({
     { code: 'KeyN', x: startX + 7.25*keyWidth + 6*xGap, y: startY + 4*(keyHeight + yGap), width: keyWidth, height: keyHeight, label: 'N' },
     { code: 'KeyM', x: startX + 8.25*keyWidth + 7*xGap, y: startY + 4*(keyHeight + yGap), width: keyWidth, height: keyHeight, label: 'M' },
     { code: 'Comma', x: startX + 9.25*keyWidth + 8*xGap, y: startY + 4*(keyHeight + yGap), width: keyWidth, height: keyHeight, label: ',' },
-    { code: 'Period', x: startX + 10.25*keyWidth + 9*xGap, y: startY + 4*(keyHeight + yGap), width: keyWidth, height: keyHeight, label: '.' },
-    { code: 'Slash', x: startX + 11.25*keyWidth + 10*xGap, y: startY + 4*(keyHeight + yGap), width: keyWidth, height: keyHeight, label: '/' },
-    { code: 'ShiftRight', x: startX + 12.25*keyWidth + 11*xGap, y: startY + 4*(keyHeight + yGap), width: keyWidth*2.25, height: keyHeight, label: 'Shift' },
-
+    
     // Row 6 (Bottom)
     { code: 'Function', x: startX, y: startY + 5*(keyHeight + yGap), width: keyWidth, height: keyHeight, label: 'fn' },
     { code: 'ControlLeft', x: startX + keyWidth + xGap, y: startY + 5*(keyHeight + yGap), width: keyWidth, height: keyHeight, label: '^' },
     { code: 'AltLeft', x: startX + 2*keyWidth + 2*xGap, y: startY + 5*(keyHeight + yGap), width: keyWidth, height: keyHeight, label: '⌥' },
     { id: 'command-key-left', code: 'MetaLeft', x: startX + 3*keyWidth + 3*xGap, y: startY + 5*(keyHeight + yGap), width: keyWidth*1.25, height: keyHeight, label: '⌘' },
     { id: 'space-key', code: 'Space', x: startX + 4.25*keyWidth + 4*xGap, y: startY + 5*(keyHeight + yGap), width: keyWidth*5.5, height: keyHeight, label: '' },
-    { id: 'command-key-right', code: 'MetaRight', x: startX + 9.75*keyWidth + 5*xGap, y: startY + 5*(keyHeight + yGap), width: keyWidth*1.25, height: keyHeight, label: '⌘' },
-    { code: 'AltRight', x: startX + 11*keyWidth + 6*xGap, y: startY + 5*(keyHeight + yGap), width: keyWidth, height: keyHeight, label: '⌥' },
-    // Arrow keys group
-    { code: 'ArrowLeft', x: startX + 12*keyWidth + 7*xGap, y: startY + 5*(keyHeight + yGap), width: keyWidth, height: keyHeight, label: '◀'},
-    { code: 'ArrowUp', x: startX + 13*keyWidth + 8*xGap, y: startY + 5*(keyHeight + yGap) - (keyHeight/2 + yGap/2), width: keyWidth, height: keyHeight, label: '▲' },
-    { code: 'ArrowDown', x: startX + 13*keyWidth + 8*xGap, y: startY + 5*(keyHeight + yGap) + (keyHeight/2 + yGap/2), width: keyWidth, height: keyHeight, label: '▼' },
-    { code: 'ArrowRight', x: startX + 14*keyWidth + 9*xGap, y: startY + 5*(keyHeight + yGap), width: keyWidth, height: keyHeight, label: '▶' },
   ];
 
-  const keyboardWidth = startX * 2 + 15.5 * keyWidth + 14 * xGap;
-  const keyboardHeight = startY * 2 + 6.5 * keyHeight + 6 * yGap;
+  const keyboardWidth = startX * 2 + 11.5 * keyWidth + 10 * xGap;
+  const keyboardHeight = startY * 2 + 6 * keyHeight + 5 * yGap;
 
   return (
     <svg width="100%" height="100%" viewBox={`0 0 ${keyboardWidth} ${keyboardHeight}`} fill="none" xmlns="http://www.w3.org/2000/svg">

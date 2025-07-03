@@ -452,16 +452,16 @@ html {
 
   #command-key-left .keyboard-key,
   #space-key .keyboard-key {
-    filter: drop-shadow(0 0 12px #2563eb);
+    filter: drop-shadow(0 0 12px #1255A7);
     animation: pulse-glow 2s infinite alternate;
   }
 
   @keyframes pulse-glow {
     from {
-      filter: drop-shadow(0 0 8px #2563eb);
+      filter: drop-shadow(0 0 8px #1255A7);
     }
     to {
-      filter: drop-shadow(0 0 16px #2563eb);
+      filter: drop-shadow(0 0 16px #1255A7);
     }
   }
 

@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { motion, AnimatePresence } from 'framer-motion';
-import Image from 'next/image';
-import { useRef, useState } from 'react';
-import { useMotionTracking } from '../hooks/useMotionTracking';
+import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+import { useRef, useState } from "react";
+import { useMotionTracking } from "../hooks/useMotionTracking";
 
 const Navbar = () => {
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -14,7 +14,7 @@ const Navbar = () => {
   useMotionTracking(containerRef);
 
   return (
-    <motion.nav 
+    <motion.nav
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
@@ -52,8 +52,10 @@ const Navbar = () => {
             </a>
 
             {/* Install Button */}
-            <button
-              ref={buttonRef}
+            <a
+              href="https://www.raycast.com/sendai/send-ai"
+              target="_blank"
+              rel="noopener noreferrer"
               className="glass-button flex items-center gap-2 px-4 py-2 rounded-full"
             >
               <Image
@@ -63,10 +65,11 @@ const Navbar = () => {
                 height={24}
                 className="h-5 w-5"
               />
-              <span className="text-white font-medium text-sm">Install Extension</span>
-            </button>
+              <span className="text-white font-medium text-sm">
+                Install Extension
+              </span>
+            </a>
           </div>
-
           {/* Mobile Menu Button */}
           <div className="md:hidden">
             <motion.button
@@ -120,7 +123,10 @@ const Navbar = () => {
                 >
                   Download Raycast
                 </a>
-                <button className="glass-button flex items-center justify-center gap-2 px-4 py-2 rounded-full">
+                <a
+                  href="https://www.raycast.com/sendai/send-ai"
+                  className="glass-button flex items-center justify-center gap-2 px-4 py-2 rounded-full"
+                >
                   <Image
                     src="/raycastLogo.svg"
                     alt="Raycast Logo"
@@ -128,8 +134,10 @@ const Navbar = () => {
                     height={24}
                     className="h-5 w-5"
                   />
-                  <span className="text-white font-medium text-sm">Install Extension</span>
-                </button>
+                  <span className="text-white font-medium text-sm">
+                    Install Extension
+                  </span>
+                </a>
               </div>
             </motion.div>
           )}
@@ -139,4 +147,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar; 
+export default Navbar;

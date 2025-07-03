@@ -102,6 +102,22 @@ export default function Home() {
                 </div>
               </div>
 
+              <div className="mt-16 flex justify-center md:hidden">
+                <ScrollReveal>
+                  <a
+                    title="Install send-ai Raycast Extension"
+                    href="https://www.raycast.com/sendai/send-ai"
+                  >
+                    <Image
+                      width={240}
+                      height={64}
+                      src="https://www.raycast.com/sendai/send-ai/install_button@2x.png?v=1.1"
+                      alt=""
+                    />
+                  </a>
+                </ScrollReveal>
+              </div>
+
               {/* Mode Tabs */}
               <div className="mt-16 reveal-animation reveal-delay-2">
                 <div className="glass-tabs rounded-full p-1 inline-flex relative">
@@ -155,8 +171,7 @@ export default function Home() {
 
                   {/* Content Area - Video */}
                   <div className="relative w-full h-full flex items-center justify-center text-white/50 pt-8">
-                    <div
-                    >
+                    <div>
                       {activeTab === "command" ? (
                         <video
                           autoPlay
@@ -170,8 +185,7 @@ export default function Home() {
                         </video>
                       ) : null}
                     </div>
-                    <div
-                    >
+                    <div>
                       {activeTab === "agentic" ? (
                         <video
                           autoPlay
@@ -180,7 +194,10 @@ export default function Home() {
                           playsInline
                           className="w-full h-full object-contain"
                         >
-                          <source src="https://ik.imagekit.io/scriptscrypt/SendAI/Raycast/raycast-asksendai.mp4" type="video/mp4" />
+                          <source
+                            src="https://ik.imagekit.io/scriptscrypt/SendAI/Raycast/raycast-asksendai.mp4"
+                            type="video/mp4"
+                          />
                           Your browser does not support the video tag.
                         </video>
                       ) : null}
@@ -235,7 +252,10 @@ export default function Home() {
                       playsInline
                       className="w-full h-full object-cover object-top"
                     >
-                      <source src="https://ik.imagekit.io/scriptscrypt/SendAI/Raycast/raycast-asksendai-wobg.mp4" type="video/mp4" />
+                      <source
+                        src="https://ik.imagekit.io/scriptscrypt/SendAI/Raycast/raycast-asksendai-wobg.mp4"
+                        type="video/mp4"
+                      />
                       Your browser does not support the video tag.
                     </video>
                     {/* Overlay gradient for desktop */}
@@ -352,7 +372,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 ref={downloadButtonRef}
-                className="mt-8 w-full md:w-auto glass-button rounded-full px-6 py-3 flex items-center justify-center md:justify-start gap-3 text-white hover:scale-105 transition-transform"
+                className="mt-8 w-full md:w-fit glass-button rounded-full px-6 py-3 flex items-center justify-center md:justify-start gap-3 text-white hover:scale-105 transition-transform"
               >
                 <Image
                   src="/assets/icons/mac.svg"

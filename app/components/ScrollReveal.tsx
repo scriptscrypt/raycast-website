@@ -4,9 +4,10 @@ import { useRef, ReactNode } from 'react';
 interface ScrollRevealProps {
   children: ReactNode;
   width?: "full" | "auto";
+  className?: string;
 }
 
-export default function ScrollReveal({ children, width = "full" }: ScrollRevealProps) {
+export default function ScrollReveal({ children, width = "full", className }: ScrollRevealProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
