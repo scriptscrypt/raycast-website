@@ -156,7 +156,7 @@ export default function Home() {
 
               {/* Laptop-like Container */}
               <div className="mt-8 w-full max-w-5xl mx-auto reveal-animation reveal-delay-2">
-                <div className="glass rounded-2xl p-4 aspect-video relative overflow-hidden">
+                <div className="glass rounded-2xl aspect-video relative overflow-hidden">
                   {/* Background Image */}
                   {/* <Image
                     src="/assets/bgs/laptopbg.png"
@@ -167,41 +167,37 @@ export default function Home() {
                   /> */}
 
                   {/* Laptop Top Bar */}
-                  <div className="absolute top-0 left-0 right-0 h-8 bg-black/20 rounded-t-2xl flex items-center px-4"></div>
+                  {/* <div className="absolute top-0 left-0 right-0 h-8 bg-black/20 rounded-t-2xl flex items-center px-4 z-10"></div> */}
 
                   {/* Content Area - Video */}
-                  <div className="relative w-full h-full flex items-center justify-center text-white/50 pt-8">
-                    <div>
-                      {activeTab === "command" ? (
-                        <video
-                          autoPlay
-                          loop
-                          muted
-                          playsInline
-                          className="w-full h-full object-contain"
-                        >
-                          <source src="https://bucket.sendai.fun/commandmode28mb.mp4" type="video/mp4" />
-                          Your browser does not support the video tag.
-                        </video>
-                      ) : null}
-                    </div>
-                    <div>
-                      {activeTab === "agentic" ? (
-                        <video
-                          autoPlay
-                          loop
-                          muted
-                          playsInline
-                          className="w-full h-full object-contain"
-                        >
-                          <source
-                            src="https://bucket.sendai.fun/agenticmode45mb.mp4"
-                            type="video/mp4"
-                          />
-                          Your browser does not support the video tag.
-                        </video>
-                      ) : null}
-                    </div>
+                  <div className="absolute inset-0">
+                    <video
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${
+                        activeTab === "command" ? "opacity-100" : "opacity-0"
+                      }`}
+                    >
+                      <source src="https://bucket.sendai.fun/commandmode28mb.mp4" type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                    <video
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${
+                        activeTab === "agentic" ? "opacity-100" : "opacity-0"
+                      }`}
+                    >
+                      <source
+                        src="https://bucket.sendai.fun/agenticmode45mb.mp4"
+                        type="video/mp4"
+                      />
+                      Your browser does not support the video tag.
+                    </video>
                   </div>
                 </div>
               </div>

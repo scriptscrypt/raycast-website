@@ -17,7 +17,7 @@ export default function ScrollReveal({ children, width = "full", className }: Sc
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.8, ease: [0.21, 0.45, 0.27, 0.99] }}
-      className={width === "full" ? "w-full" : ""}
+      className={width === "full" ? "w-full" : "" + className}
     >
       {children}
     </motion.div>
