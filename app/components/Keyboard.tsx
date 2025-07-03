@@ -3,31 +3,23 @@ import React, { useState, useEffect } from 'react';
 import KeyboardContent from './KeyboardContent';
 
 const Keyboard = () => {
-  const [isCommandPressed, setIsCommandPressed] = useState(false);
-  const [isSpacePressed, setIsSpacePressed] = useState(false);
+  const [pressedKeys, setPressedKeys] = useState(new Set<string>());
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Meta' || event.key === 'Control') {
-        setIsCommandPressed(true);
-      }
-      if (event.code === 'Space') {
-        setIsSpacePressed(true);
-      }
+      setPressedKeys(prev => new Set(prev).add(event.code));
     };
 
     const handleKeyUp = (event: KeyboardEvent) => {
-      if (event.key === 'Meta' || event.key === 'Control') {
-        setIsCommandPressed(false);
-      }
-      if (event.code === 'Space') {
-        setIsSpacePressed(false);
-      }
+      setPressedKeys(prev => {
+        const newSet = new Set(prev);
+        newSet.delete(event.code);
+        return newSet;
+      });
     };
 
     const handleBlur = () => {
-      setIsCommandPressed(false);
-      setIsSpacePressed(false);
+      setPressedKeys(new Set());
     };
 
     window.addEventListener('keydown', handleKeyDown);
@@ -43,10 +35,7 @@ const Keyboard = () => {
 
   return (
     <div className="relative">
-      <KeyboardContent
-        isCommandPressed={isCommandPressed}
-        isSpacePressed={isSpacePressed}
-      />
+      <KeyboardContent pressedKeys={pressedKeys} />
       <div 
         className="absolute inset-0 pointer-events-none" 
         style={{ background: 'radial-gradient(ellipse at 50% 100%, transparent 10%, black 60%)' }}
